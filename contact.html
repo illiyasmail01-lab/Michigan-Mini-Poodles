@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact | Michigan Mini & Toy Poodles</title>
+    <meta
+      name="description"
+      content="Contact Michigan Mini & Toy Poodles through a simple puppy inquiry form."
+    >
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="Michigan Mini and Toy Poodles home">
+        <span class="brand-photo photo-profile" aria-hidden="true"></span>
+        <span>Michigan Mini & Toy Poodles</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="./index.html">Home</a>
+        <a href="./parents.html">Parents</a>
+        <a href="./litters.html">Litters</a>
+        <a href="./health.html">Health</a>
+        <a class="active" href="./contact.html">Contact</a>
+        <a
+          href="https://www.instagram.com/michigan.redpoodles/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Instagram
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <p class="eyebrow">Contact</p>
+        <h1>Send a puppy inquiry.</h1>
+        <p>
+          Share your household, timeline, and what you are looking for. This
+          form is set up for static-site submissions and routes to a thank-you
+          page after sending.
+        </p>
+      </section>
+
+      <section class="section form-layout">
+        <form
+          class="contact-form"
+          name="poodle-inquiry"
+          method="POST"
+          action="https://formspree.io/f/REPLACE_WITH_FORM_ID"
+        >
+          <input type="hidden" name="_subject" value="New puppy inquiry">
+          <input type="hidden" name="_next" value="./thanks.html">
+
+          <div class="field-row">
+            <label>
+              Name
+              <input name="name" autocomplete="name" required>
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" autocomplete="email" required>
+            </label>
+          </div>
+
+          <div class="field-row">
+            <label>
+              Phone
+              <input name="phone" type="tel" autocomplete="tel">
+            </label>
+            <label>
+              Timeline
+              <select name="timeline" required>
+                <option value="">Select one</option>
+                <option>Ready now</option>
+                <option>Within 1-3 months</option>
+                <option>Later this year</option>
+                <option>Researching for the future</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            Interested in
+            <select name="interest" required>
+              <option value="">Select one</option>
+              <option>Miniature red poodle puppy</option>
+              <option>Toy poodle puppy</option>
+              <option>Upcoming litter</option>
+              <option>Parent information</option>
+              <option>Health testing or vet care information</option>
+            </select>
+          </label>
+
+          <label>
+            Tell us about your home
+            <textarea
+              name="home"
+              rows="5"
+              placeholder="Household, schedule, children or pets, grooming plans, and previous dog experience."
+              required
+            ></textarea>
+          </label>
+
+          <label>
+            Questions
+            <textarea
+              name="questions"
+              rows="4"
+              placeholder="Availability, parent dogs, records, pickup timing, registration, or anything else."
+            ></textarea>
+          </label>
+
+          <button class="button button-primary" type="submit">Send Inquiry</button>
+          <p class="form-note">
+            The form endpoint needs to be connected before launch.
+            Please do not send a deposit until availability, parent details,
+            records, and pickup terms have been confirmed directly.
+          </p>
+        </form>
+
+        <aside class="form-side">
+          <p class="eyebrow">Response details</p>
+          <h2>Include the basics up front.</h2>
+          <p>
+            A complete inquiry makes it easier to answer quickly. Include your
+            timeline, whether you are looking for a mini or toy poodle, and any
+            parent or litter questions you want answered.
+          </p>
+          <ul class="quiet-list">
+            <li>Preferred timeline</li>
+            <li>Household and schedule</li>
+            <li>Miniature or toy poodle preference</li>
+            <li>Questions about parents, records, and pickup</li>
+          </ul>
+          <a
+            class="button button-secondary"
+            href="https://www.instagram.com/michigan.redpoodles/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Instagram Backup
+          </a>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Michigan Mini & Toy Poodles</span>
+      <a
+        href="https://www.instagram.com/michigan.redpoodles/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        @michigan.redpoodles
+      </a>
+    </footer>
+
+  </body>
+</html>
