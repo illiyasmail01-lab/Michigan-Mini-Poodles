@@ -21,7 +21,7 @@
         <a href="./parents.html">Parents</a>
         <a href="./litters.html">Litters</a>
         <a href="./health.html">Health</a>
-        <a class="active" href="./contact.html">Contact</a>
+        <a class="active" href="./contact.html" aria-current="page">Contact</a>
         <a
           href="https://www.instagram.com/michigan.redpoodles/"
           target="_blank"
@@ -37,9 +37,9 @@
         <p class="eyebrow">Contact</p>
         <h1>Send a puppy inquiry.</h1>
         <p>
-          Share your household, timeline, and what you are looking for. This
-          form is set up for static-site submissions and routes to a thank-you
-          page after sending.
+          Share your household, timeline, and what you are looking for. The
+          form is ready for a static-site submission service and will route to a
+          thank-you page once the endpoint is connected.
         </p>
       </section>
 
@@ -49,6 +49,7 @@
           name="poodle-inquiry"
           method="POST"
           action="https://formspree.io/f/REPLACE_WITH_FORM_ID"
+          data-inquiry-form
         >
           <input type="hidden" name="_subject" value="New puppy inquiry">
           <input type="hidden" name="_next" value="./thanks.html">
@@ -113,8 +114,11 @@
           </label>
 
           <button class="button button-primary" type="submit">Send Inquiry</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
           <p class="form-note">
-            The form endpoint needs to be connected before launch.
+            The form submission endpoint still needs to be connected before
+            inquiries can send from the website. Please use Instagram for live
+            inquiries until that is active.
             Please do not send a deposit until availability, parent details,
             records, and pickup terms have been confirmed directly.
           </p>
@@ -157,5 +161,19 @@
       </a>
     </footer>
 
+    <script>
+      const inquiryForm = document.querySelector("[data-inquiry-form]");
+      const formStatus = document.querySelector(".form-status");
+
+      inquiryForm?.addEventListener("submit", (event) => {
+        if (inquiryForm.action.includes("REPLACE_WITH_FORM_ID")) {
+          event.preventDefault();
+          if (formStatus) {
+            formStatus.textContent =
+              "The website form is ready, but the submission endpoint has not been connected yet. Please send your inquiry through Instagram for now.";
+          }
+        }
+      });
+    </script>
   </body>
 </html>
