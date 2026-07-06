@@ -32,6 +32,8 @@ action="https://formspree.io/f/REPLACE_WITH_FORM_ID"
 ```
 
 Replace `REPLACE_WITH_FORM_ID` with the actual form id from the provider.
+Until that placeholder is replaced, the contact page keeps visitors from
+submitting into a broken provider URL and points them to Instagram instead.
 
 ## Health Document Link
 
